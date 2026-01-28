@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTask Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>DevTask Tracker</h1>
+            <p>El Monolito Artesanal</p>
+        </header>
+
+        <section class="task-form-container">
+            <form id="task-form">
+                <div class="form-group">
+                    <label for="titulo">Título de la Tarea</label>
+                    <input type="text" id="titulo" placeholder="Ej: Refactorizar API" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" placeholder="Detalles de la tarea..."></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tecnologia">Tecnología</label>
+                        <select id="tecnologia" required>
+                            <option value="" disabled selected>Selecciona una tecnología</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="Node.js">Node.js</option>
+                            <option value="Python">Python</option>
+                            <option value="Java">Java</option>
+                            <option value="MongoDB">MongoDB</option>
+                            <option value="React">React</option>
+                            <option value="CSS">CSS</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="estado">Estado Inicial</label>
+                        <select id="estado">
+                            <option value="pending">Pendiente</option>
+                            <option value="done">Completada</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" id="save-btn">Guardar Tarea</button>
+            </form>
+        </section>
+
+        <section class="task-list-container">
+            <h2>Tareas Activas</h2>
+            <div id="task-list" class="task-grid">
+                <!-- Tareas se cargarán aquí -->
+                <div class="loader">Cargando tareas...</div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
